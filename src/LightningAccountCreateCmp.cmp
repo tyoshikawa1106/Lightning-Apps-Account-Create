@@ -1,0 +1,22 @@
+<aura:component controller="BarnSwallow.LightningAccountCreateController">
+    <aura:attribute name="newAccount" type="Account" default="{ 'sobjectType': 'Account',
+                                                                                                                      'Name': '1st Account',
+                                                                                                                      'AccountNumber': '000',
+                                                                                                                      'NumberOfEmployees': 1,
+                                                                                                                      'Phone': '000-111-2222'
+                                                                                                                      }" />
+  <form>
+        <div class="page-header page-header-anchor">
+            <h1>Account Create</h1>
+            <p>- Lightning Apps -</p>
+        </div>
+        <fieldset>
+            <ui:InputText aura:Id="acc-name" label="Name" value="{!v.newAccount.Name}" class="form-control" placeholder="Account Name" />
+            <ui:InputText aura:Id="account-number" label="AccountNumber " value="{!v.newAccount.AccountNumber}" class="form-control" placeholder="000" />
+            <ui:InputNumber aura:Id="number-of-employees" label="NumberOfEmployees" value="{!v.newAccount.NumberOfEmployees}" class="form-control" placeholder="100"/>
+            <ui:inputPhone aura:Id="phone" label="Phone" class="form-control" value="{!v.newAccount.Phone}" placeholder="000-111-2222" />
+            <br/>
+            <ui:button label="Create!!" press="{!c.createAccount}" />
+        </fieldset>
+    </form>
+</aura:component>
